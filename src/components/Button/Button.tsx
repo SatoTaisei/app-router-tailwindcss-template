@@ -1,9 +1,11 @@
 import { Button as NextUIButton } from '@nextui-org/button';
 
-type Props = {
-  label: string;
-};
+import type { ButtonProps } from '@nextui-org/react';
 
-export const Button = ({ label }: Props) => {
-  return <NextUIButton>{label}</NextUIButton>;
+type Props = {
+  label?: string;
+} & ButtonProps;
+
+export const Button = ({ label, ...props }: Props) => {
+  return <NextUIButton {...props}>{label}</NextUIButton>;
 };
