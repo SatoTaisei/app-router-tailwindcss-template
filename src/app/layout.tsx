@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
+
 import '@/styles/globals.css';
+import { NextUIProvider } from '@nextui-org/system';
 
 type Props = {
   children: ReactNode;
@@ -8,7 +10,9 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <NextUIProvider>{children}</NextUIProvider>
+      </body>
     </html>
   );
 }
